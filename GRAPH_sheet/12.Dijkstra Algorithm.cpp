@@ -1,11 +1,19 @@
 //Dijkstra Algorithm
 
 /*
+Shortest Path in a Graph: Given a graph with weighted edges, 
+you may be asked to find the shortest path between two nodes.
+Dijkstra's algorithm can be used to solve this problem efficiently by finding the minimum cost path.
+*/
+
+
+/*
 class Solution
 {
 	public:
 	//Function to find the shortest distance of all the vertices
-    //from the source vertex S.
+    //from the source vertex S in weighted graph.
+
     int findminNode(vector<int>&dist,vector<bool>&checkNode)
     {
         int Min = INT_MAX; int MinIndex;
