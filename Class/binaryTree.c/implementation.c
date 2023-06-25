@@ -56,19 +56,22 @@ void Insert(struct Node** root, int val, int pos) {
 
 int main(){
     struct Node* root = NULL;
-    /*
+    
     insert(&root,2);
     insert(&root,4);
     insert(&root,8);
-    */
-    Insert(&root,7,0);
-    Insert(&root,45,0);
-    Insert(&root,5,1);
-    Insert(&root,7,0);
-    Insert(&root,23,0);
-    Insert(&root,3,1);
+    insert(&root,10);
+    insert(&root,11);
+    insert(&root,12);
+    
+    // Insert(&root,7,0);
+    // Insert(&root,45,0);
+    // Insert(&root,5,1);
+    // Insert(&root,7,0);
+    // Insert(&root,23,0);
+    // Insert(&root,3,1);
 
-    Insert(&root,14,0);
+    // Insert(&root,14,0);
 
 
     inorder(root);
