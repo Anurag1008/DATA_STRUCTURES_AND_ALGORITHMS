@@ -12,7 +12,7 @@ void heapify(int arr[],int size,int i){
         int largest = i;
         int l = 2*i+1;
         int r = 2*i+2;
-        //main purpose it is not greater than the right.
+        //main purpose it is not greater than the largest.
         if(l < size && arr[l] > arr[largest]) largest = l;
         if(r < size && arr[r] > arr[largest]) largest = r;
         if(largest != i){
@@ -30,7 +30,7 @@ void insert(int arr[],int data){
     else{
         arr[size] = data;
         size++;
-        for(int i=size/2+1;i>=0;i--){
+        for(int i=size/2-1;i>=0;i--){
             heapify(arr,size,i);
         }
     }
