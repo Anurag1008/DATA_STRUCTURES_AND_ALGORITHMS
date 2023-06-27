@@ -86,7 +86,7 @@ void insertAtPosition(struct Node** head, int data, int position) {
         newNode->next = temp;
         temp->prev->next = newNode;
         temp->prev = newNode;
-    }321
+    }
 }
 
 void deleteAtPosition(struct Node** head, int position) {
