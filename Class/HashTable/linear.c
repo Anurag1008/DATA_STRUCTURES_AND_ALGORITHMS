@@ -4,6 +4,7 @@
 int hash[MAX] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 void insert(int key)
 {
+    //not allow negative value.
     if (key < 0)
     {
         printf("\n this value is not able to insert \n");
@@ -43,18 +44,18 @@ void display()
 
 void search(int element)
 {
-    int i = 0;
+    int check = 0;
     for (int i = 0; i < MAX; i++)
     {
         if (hash[i] == element)
         {
             printf("\nthe value of element is at position : \n");
             printf("%d ", i);
-            i = 1;
+            check = 1;
             break;
         }
     }
-    if (i == 0)
+    if (check == 0)
         printf("\nthe value is absent in hashtable\n");
 }
 
