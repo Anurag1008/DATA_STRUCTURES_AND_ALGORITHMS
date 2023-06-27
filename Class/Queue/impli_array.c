@@ -29,8 +29,7 @@ int dequeue()
     if(rear == -1 || front == -1 || front > rear)
     printf("underFlow");
 
-    deleted = queue[rear];
-    rear -- ;
+    deleted = queue[front];
     front ++;
 
     return deleted;
@@ -51,9 +50,11 @@ int Front()
 
 void display()
 {
+    printf("\n");
     int itr = rear;
-    for(int i=0;i<=rear;i++)
+    for(int i=front;i<=rear;i++)
     printf("%d ",queue[i]);
+    printf("\n");
 }
 
 int main()
@@ -62,8 +63,11 @@ int main()
     enqueue();
     enqueue();
     enqueue();
+    printf("\n");
     display();
+
     int value = dequeue();
+    int value2 = dequeue();
     printf("%d",value);
     //size();
     display();

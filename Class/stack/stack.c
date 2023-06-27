@@ -36,8 +36,7 @@ int pop()
 void print()
 {
     int i;
-    while(top == -1)
-    {
+    if(top == -1){
         printf("stack underflow\n");
         return;
     }
