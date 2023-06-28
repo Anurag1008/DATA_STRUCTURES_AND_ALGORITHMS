@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <stack>
+#include<math.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 //84. Largest Rectangle in Histogram
