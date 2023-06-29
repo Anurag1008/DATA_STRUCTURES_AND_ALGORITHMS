@@ -15,7 +15,7 @@ public:
         }
     }
     
-    void dfs2(int node,int parent,vector<int>&ans,vector<int>&join,vector<vector<indt>>&adj){
+    void dfs2(int node,int parent,vector<int>&ans,vector<int>&join,vector<vector<int>>&adj){
         for(auto neighbor : adj[node])
         if(neighbor!=parent){
             ans[neighbor]+=ans[node]+join[0]-join[neighbor]-ans[neighbor]-join[neighbor];
