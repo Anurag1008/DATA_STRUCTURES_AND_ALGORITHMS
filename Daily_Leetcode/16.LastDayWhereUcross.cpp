@@ -112,3 +112,82 @@ public:
     }
 };
 */
+
+//Using Union Find Algorithm
+
+/*
+class DSU{
+    public:
+    vector<int> parent;
+    vector<int> size;
+    DSU(int n){
+        for(int i=0;i<n;i++){
+            parent.push_back(i);
+            size.push_back(1);
+        }
+    }
+    
+    int find_parent(int u){
+        if(parent[u]==u)
+            return u;
+        
+        return parent[u] = find_parent(parent[u]);
+    }
+    
+    void uni(int u,int v){
+        u = find_parent(u);
+        v = find_parent(v);
+        
+        if(u==v)
+            return;
+        
+        else if(size[u]>=size[v]){
+            size[u]+=size[v];
+            parent[v] = u;
+        }
+        else
+        {
+            size[v] += size[u];
+            parent[u] = v;
+        }
+    }
+};
+class Solution {
+public:
+    int latestDayToCross(int row, int col, vector<vector<int>>& cells) {
+        DSU d(row*col+2); //plus 2 coz 2 dummy nodes one start and one at end
+        
+        int start_dummy = row*col;
+        int end_dummy = row*col+1;
+        vector<vector<int>> grid(row,vector<int>(col,1));
+        
+        for(int j=0;j<col;j++){
+            d.uni(start_dummy,j);
+            d.uni(end_dummy,(row-1)*col+j);
+        }
+        int dr[] = {-1,0,1,0};
+        int dc[] = {0,-1,0,1};
+        
+        for(int i=row*col-1;i>=0;i--){
+            int r = cells[i][0]-1,c = cells[i][1]-1;//-1 coz it was in one based indexing
+            grid[r][c] = 0;
+            int key = r*col + c;
+            for(int k=0;k<4;k++){
+                int new_r = r + dr[k];
+                int new_c = c + dc[k];
+                
+                if(new_r<0 || new_c<0 || new_r>=row || new_c>=col || grid[new_r][new_c])
+                    continue;
+                
+                int new_key = new_r*col + new_c;
+                d.uni(key,new_key);
+                
+                if(d.find_parent(start_dummy)==d.find_parent(end_dummy))
+                    return i;
+                
+            }
+        }
+        return 0;
+    }
+};
+*/
