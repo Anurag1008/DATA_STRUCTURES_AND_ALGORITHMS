@@ -55,7 +55,6 @@ public:
             }
             else right = mid - 1;
         }
-        cout<<ans<<"\n";
         return ans;
     }
 };
