@@ -1,5 +1,7 @@
 //50. Pow(x, n)
 
+//complexity O(log(n))
+
 /*
 class Solution {
 public:
