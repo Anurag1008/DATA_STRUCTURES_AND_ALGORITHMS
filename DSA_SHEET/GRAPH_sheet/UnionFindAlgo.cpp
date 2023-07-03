@@ -2,6 +2,7 @@
 //UNION FIND ALGORITHMS
 
 //Do check set 2 gfgfor rank and path compression and make the complexity O(E*log(V) ) or amortized time complexity is O(α(n)).
+//where α(n) is the inverse Ackermann function, which grows very steadily (it does not even exceed for n<10600  approximately).
 
 //https://practice.geeksforgeeks.org/problems/detect-cycle-using-dsu/1
 
