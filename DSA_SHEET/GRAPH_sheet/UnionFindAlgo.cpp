@@ -1,6 +1,8 @@
 
 //UNION FIND ALGORITHMS
 
+//Do check set 2 gfgfor rank and path compression and make the complexity O(E*log(V) ) or amortized time complexity is O(α(n)).
+
 //https://practice.geeksforgeeks.org/problems/detect-cycle-using-dsu/1
 
 /*
