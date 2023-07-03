@@ -73,3 +73,36 @@ public:
         return ans;
     }
 };
+
+//DP approach
+
+/*
+#include <vector>
+#include <algorithm>
+
+class Solution {
+public:
+    int maximalSquare(std::vector<std::vector<char>>& matrix) {
+        if (matrix.empty() || matrix[0].empty()) {
+            return 0;
+        }
+        
+        int rows = matrix.size();
+        int cols = matrix[0].size();
+        
+        std::vector<std::vector<int>> dp(rows + 1, std::vector<int>(cols + 1, 0));
+        int max_side = 0;
+        
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                if (matrix[r][c] == '1') {
+                    dp[r + 1][c + 1] = std::min({ dp[r][c], dp[r + 1][c], dp[r][c + 1] }) + 1; // Be careful of the indexing since dp grid has additional row and column
+                    max_side = std::max(max_side, dp[r + 1][c + 1]);
+                }
+            }
+        }
+        
+        return max_side * max_side;
+    }
+};
+*/
