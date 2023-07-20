@@ -14,4 +14,17 @@ class Solution {
         return count;
     }
 };
+
+
+#include<bitset>
+
+class Solution {
+  public:
+    int setBits(int N) {
+        unsigned int num = N;
+        std::bitset<32> bits(num);
+        int count = bits.count();
+        return count;
+    }
+};
 */
