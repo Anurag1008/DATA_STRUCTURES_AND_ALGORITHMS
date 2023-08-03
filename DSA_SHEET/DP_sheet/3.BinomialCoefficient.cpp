@@ -36,4 +36,22 @@ public:
     }
 };
 
+//Tabulation
+#define mod 1000000007
+class Solution {
+public:
+    int nCr(int n, int r) {
+        if(r > n) return 0;
+        int dp[n+1][r+1];
+        int i,j;
+        for(int i=0;i<=n;i++){
+            for(int j=0;j<=min(i,r);j++){
+                if(j==i || j == 0) dp[i][j] = 1;
+                else dp[i][j] = (dp[i-1][j-1] + dp[i-1][j])%mod;
+            }
+        }
+        return dp[n][r];
+    }
+};
+
 */
