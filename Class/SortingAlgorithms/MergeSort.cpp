@@ -1,101 +1,53 @@
-//https://practice.geeksforgeeks.org/problems/merge-sort/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
-
-//{ Driver Code Starts
-#include <stdio.h>
-#include <bits/stdc++.h>
-using namespace std;
-
-
-
-/* Function to print an array */
-void printArray(int arr[], int size)
-{
-    int i;
-    for (i=0; i < size; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
-}
-
-
-// } Driver Code Ends
+/*
 class Solution
 {
     public:
-    void merge(int arr[], int l, int mid, int r)
+    void merge(int arr[], int l, int m, int r)
     {
-        int n1 = mid - l + 1;
-        int n2 = r - mid;
-        vector<int>L(n1);
-        vector<int>R(n2);
+        vector<int>leftarr(m-l+1);
+        vector<int>rightarr(r-m);
+        for(int i=0;i<leftarr.size();i++) leftarr[i] = arr[l+i];
+        for(int i=0;i<rightarr.size();i++) rightarr[i] = arr[m+i+1];
         
-        for(int i=0;i<n1;i++) L[i] = arr[l+i];
-        for(int j=0;j<n2;j++) R[j] = arr[mid + 1 + j];
-        
-        int i=0;
-        int j=0;
-        int k=l;
-        
-        while(i < n1 && j < n2){
-            if(L[i] <= R[j]){
-                arr[k] = L[i];
+        int i = 0;
+        int j = 0;
+        int index = l;
+        while(i < leftarr.size() && j < rightarr.size()){
+            if(leftarr[i] <= rightarr[j]){
+                arr[index] = leftarr[i];
                 i++;
             }
-            else{ 
-                arr[k] = R[j];
+            else if(leftarr[i] >= rightarr[j]){
+                arr[index] = rightarr[j];
                 j++;
             }
-            k++;
+            index++;
         }
         
-        //remaining elements of L.
-        
-        while(i < n1){
-            arr[k] = L[i];
-            k++;
+        while(i < leftarr.size()){
+            arr[index] = leftarr[i];
+            index++;
             i++;
         }
         
-        //remaining elements of R.
-        
-        while(j < n2){
-            arr[k] = R[j];
-            k++;
+        while(j < rightarr.size()){
+            arr[index] = rightarr[j];
+            index++;
             j++;
         }
+        
+        leftarr.clear();
+        rightarr.clear();
         
     }
     public:
     void mergeSort(int arr[], int l, int r)
     {
-       if(l<r){
-           int mid = l + (r - l)/2;
-           mergeSort(arr,l,mid);
-           mergeSort(arr,mid+1,r);
-           merge(arr,l,mid,r);
-       } 
+        if(l >=r ) return;
+        int mid = (l + r)/2;
+        mergeSort(arr,l,mid);
+        mergeSort(arr,mid+1,r);
+        merge(arr,l,mid,r);
     }
 };
-
-//{ Driver Code Starts.
-
-
-int main()
-{
-    int n,T,i;
-
-    scanf("%d",&T);
-
-    while(T--){
-    
-    scanf("%d",&n);
-    int arr[n+1];
-    for(i=0;i<n;i++)
-      scanf("%d",&arr[i]);
-
-    Solution ob;
-    ob.mergeSort(arr, 0, n-1);
-    printArray(arr, n);
-    }
-    return 0;
-}
-// } Driver Code Ends
+*/
